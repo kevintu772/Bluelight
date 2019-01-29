@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlarmEditActivity">
+
+    <LinearLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:id="@+id/cancelCreate"
+                android:textSize="14sp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:id="@+id/doneCreate"
+                android:textSize="14sp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <TimePicker
+            android:id="@+id/alarmTimePicker"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:layout_gravity="center|top"
+            android:timePickerMode="spinner"
+            />
+
+        <LinearLayout
+            android:id="@+id/daypicker_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.4">
+
+            <include
+                android:id="@+id/daypicker"
+                layout="@layout/daypicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></include>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/nameField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:orientation="vertical"
+            android:layout_weight="0.4">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:textSize="12sp"
+                android:text="Alarm Name"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="10sp"
+                android:text="Press to enter name"/>
+
+         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/soundField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:orientation="horizontal"
+            android:layout_weight="0.4">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:layout_gravity="left"
+                android:text="Alarm Sound"/>
+
+            <Switch
+                android:id="@+id/alarmSoundSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/vibField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:orientation="horizontal"
+            android:layout_weight="0.4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:layout_gravity="left"
+                android:text="Alarm Vibration"/>
+
+            <Switch
+                android:id="@+id/alarmVibSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:orientation="horizontal"
+            android:layout_weight="2">
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

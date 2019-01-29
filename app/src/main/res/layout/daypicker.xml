@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ToggleButton
+        android:id="@+id/tS"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textOff="S"
+        android:textOn="S"
+        style="@style/toggleButton"
+        android:background="@drawable/toggle_bg" />
+    <ToggleButton
+        android:id="@+id/tM"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textOff="M"
+        android:textOn="M"
+        style="@style/toggleButton"
+        android:background="@drawable/toggle_bg" />
+
+    <ToggleButton
+        android:id="@+id/tT"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textOff="T"
+        android:textOn="T"
+        style="@style/toggleButton"
+        android:background="@drawable/toggle_bg" />
+
+    <ToggleButton
+        android:id="@+id/tW"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textOff="W"
+        android:textOn="W"
+        style="@style/toggleButton"
+        android:background="@drawable/toggle_bg" />
+
+    <ToggleButton
+        android:id="@+id/tTh"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textOff="T"
+        android:textOn="T"
+        style="@style/toggleButton"
+        android:background="@drawable/toggle_bg" />
+
+    <ToggleButton
+        android:id="@+id/tF"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textOff="F"
+        android:textOn="F"
+        style="@style/toggleButton"
+        android:background="@drawable/toggle_bg" />
+
+    <ToggleButton
+        android:id="@+id/tSa"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textOff="S"
+        android:textOn="S"
+        style="@style/toggleButton"
+        android:background="@drawable/toggle_bg" />
+</LinearLayout>

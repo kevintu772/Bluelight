@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Bluelight</string>
+    <string name="color_temperature">Color Temperature</string>
+    <string name="brightness">Brightness</string>
+    <string name="did_we_help">Did we Help?</string>
+    <string name="togglebutton">ToggleButton</string>
+    <string name="share">Share</string>
+    <string name="rate">Rate</string>
+    <string name="donate">Donate</string>
+    <string name="wake_time">Wake Time</string>
+    <string name="preview">Preview</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string name="title_activity_alarm">AlarmActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

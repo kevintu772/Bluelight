@@ -17,6 +17,7 @@ import android.provider.Settings;
 import android.support.v4.content.WakefulBroadcastReceiver;
 import android.util.Log;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -25,73 +26,26 @@ public class AlarmReceiver extends WakefulBroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-        //this will update the UI with message
 
-        final MainActivity inst = MainActivity.instance();
 
-        notify(context);
+        Toast toast = Toast.makeText(context, "yeet", Toast.LENGTH_SHORT);
+        toast.show();
 
-        // make blue
-        inst.activate();
-
-        new Timer().schedule(new TimerTask() {
-            @Override
+        new Thread(new Runnable() {
             public void run() {
-                inst.runOnUiThread(new Runnable() {
 
-                    @Override
-                    public void run() {
-                        inst.deactivate();
-                    }
-                });
+                Intent i = new Intent(context, AlarmActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+                context.startActivity(i);
+
             }
-        }, 10000);
+        }).start();
+
 
 
 
     }
 
-    public void notify(Context context) {
-        final AudioManager audioManager = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
-
-        // maximise volume and vibrate
-        final int ringer = audioManager.getRingerMode();
-        final int origVol = audioManager.getStreamVolume(AudioManager.STREAM_RING);
-        final Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-
-        if (ringer != AudioManager.RINGER_MODE_SILENT) {
-            audioManager.setStreamVolume(AudioManager.STREAM_RING, audioManager.getStreamMaxVolume(AudioManager.STREAM_RING), 0);
-
-            // vibrate
-            long[] pattern = {500, 500};
-            v.vibrate(pattern,0);
-        }
-
-        // sound the alarm
-        Uri alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-        if (alarmUri == null) {
-            alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        }
-        final Ringtone ringtone = RingtoneManager.getRingtone(context, alarmUri);
-        ringtone.play();
-
-
-
-
-
-        new Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                ringtone.stop();
-                if (ringer != AudioManager.RINGER_MODE_SILENT) {
-                    audioManager.setStreamVolume(AudioManager.STREAM_RING, origVol, 0);
-                    v.cancel();
-                }
-            }
-        }, 10000);
-
-
-
-    }
 
 }
